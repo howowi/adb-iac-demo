@@ -60,6 +60,6 @@ variables:
     required: true
     default: "19c"
     additionalProps:
-        dbWorkload: "OLTP"
+      dbWorkload: "OLTP"
     dependsOn:
       compartmentId: ${compartment_ocid}
