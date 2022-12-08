@@ -1,0 +1,71 @@
+# Copyright (c) 2020, Oracle and/or its affiliates. All rights reserved.
+# Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
+title: "Create a ATP in Oracle Cloud Infrastructure"
+description: "Create a ATP in Oracle Cloud Infrastructure"
+schemaVersion: 1.1.0
+version: "20200301"
+locale: "en"
+
+variableGroups:
+  - title: "General Config"
+    visible: false
+    variables:
+    - compartment_ocid
+    - region
+    - tenancy_ocid
+    - autonomous_database_is_dedicated
+    - autonomous_database_license_model
+    - autonomous_database_db_workload
+
+  - title: "Autonomous Transaction Processing Config"
+    visible: true
+    variables:
+    - autonomous_database_db_name 
+    - autonomous_database_display_name
+    - autonomous_database_whitelisted_ips 
+
+variables:
+
+  compartment_ocid:
+    type: oci:identity:compartment:id
+    required: true
+    title: "Compartment ID"
+    description: "Compartment ID"
+  
+  region:
+    type: oci:identity:region:name
+    required: true
+    title: "Region"
+    description: "Region"
+
+  autonomous_data_warehouse_display_name:
+    type: string
+    required: true
+    default: "example_autonomous_data_warehouse"
+    title: "ADW Display Name"
+    description: "Input ADW Display Name"
+
+  autonomous_database_db_name:
+    type: string
+    required: true
+    default: "adbdb1"
+    title: "ATP DB Name"
+    description: "Input ATP DB Name"
+
+  autonomous_database_display_name:
+    type: string
+    required: true
+    default: "example_autonomous_database"
+    title: "ATP Display Name"
+    description: "Input ATP Display Name"
+
+  autonomous_database_version:
+    type: oci:database:autonomousdatabaseversion:id
+    title: "ATP DB Version"
+    description: "Select ATP DB version"
+    required: true
+    default: "19c"
+    additionalProps:
+        dbWorkload: "OLTP"
+    dependsOn:
+      compartmentId: ${compartment_ocid}
