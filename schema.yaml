@@ -67,3 +67,16 @@ variables:
       dbWorkload: "OLTP"
     dependsOn:
       compartmentId: ${compartment_ocid}
+
+outputs:
+  autonomous_database_admin_password:
+    type: password
+    title: "ATP Admin Password"
+    displayText: "ATP Admin Password"
+    visible: true
+
+  autonomous_database_wallet_password:
+    type: password
+    title: "ATP Wallet Password"
+    displayText: "ATP Wallet Password"
+    visible: true
