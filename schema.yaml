@@ -1,5 +1,3 @@
-# Copyright (c) 2020, Oracle and/or its affiliates. All rights reserved.
-# Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
 title: "Create a ATP in Oracle Cloud Infrastructure"
 description: "Create a ATP in Oracle Cloud Infrastructure"
 schemaVersion: 1.1.0
@@ -38,6 +36,12 @@ variables:
     required: true
     title: "Region"
     description: "Region"
+
+  tenancy_ocid:
+    type: oci:identity:tenancy:id
+    required: true
+    title: "Tenancy OCID"
+    description: "Please select the target tenancy"
 
   autonomous_database_db_name:
     type: string
