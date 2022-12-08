@@ -23,6 +23,7 @@ variableGroups:
     - autonomous_database_db_name 
     - autonomous_database_display_name
     - autonomous_database_whitelisted_ips 
+    - autonomous_database_version
 
 variables:
 
@@ -37,13 +38,6 @@ variables:
     required: true
     title: "Region"
     description: "Region"
-
-  autonomous_data_warehouse_display_name:
-    type: string
-    required: true
-    default: "example_autonomous_data_warehouse"
-    title: "ADW Display Name"
-    description: "Input ADW Display Name"
 
   autonomous_database_db_name:
     type: string
