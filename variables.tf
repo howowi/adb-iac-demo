@@ -8,10 +8,7 @@
       variable "autonomous_database_db_workload" {
         default = "OLTP"
       }
-      
-      variable "autonomous_data_warehouse_db_workload" {
-        default = "DW"
-      }
+    
       
       variable "autonomous_database_license_model" {
         default = "LICENSE_INCLUDED"
@@ -24,14 +21,7 @@
       variable "autonomous_database_display_name" {
         default = "example_autonomous_database"
       }
-
-      variable "autonomous_data_warehouse_db_name" {
-        default = "adbdw1"
-      }
-      
-      variable "autonomous_data_warehouse_display_name" {
-        default = "example_autonomous_data_warehouse"
-      }
+    
 
       variable "autonomous_database_is_dedicated" {
         default = false
