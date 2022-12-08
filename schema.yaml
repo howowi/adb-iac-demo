@@ -70,13 +70,15 @@ variables:
 
 outputs:
   autonomous_database_admin_password:
-    type: password
+    type: string
     title: "ATP Admin Password"
     displayText: "ATP Admin Password"
     visible: true
+    sensitive: true
 
   autonomous_database_wallet_password:
-    type: password
+    type: string
     title: "ATP Wallet Password"
     displayText: "ATP Wallet Password"
     visible: true
+    sensitive: true
